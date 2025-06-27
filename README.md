@@ -1,66 +1,119 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Forum Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern forum application built with Laravel and Vue.js, demonstrating full-stack development skills and exploring the complexity behind seemingly simple web applications.
 
-## About Laravel
+## Project Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A forum is deceptively complex. Sure, it's made up of threads and replies, but what else might exist as part of a forum? What about profiles, or thread subscriptions, or filtering, or real-time notifications? As it turns out, a forum is the perfect project to stretch your programming muscles.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This project explores the intricacies of building a comprehensive forum system, implementing features that showcase modern web development practices and Laravel's powerful ecosystem.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tech Stack
 
-## Learning Laravel
+-   **Backend**: Laravel 11 with PHP 8.2+
+-   **Frontend**: Vue.js 3 with Inertia.js for seamless SPA experience
+-   **Styling**: Tailwind CSS for modern, responsive design
+-   **Authentication**: Laravel Jetstream with Sanctum
+-   **Testing**: Pest for elegant PHP testing
+-   **Code Quality**: Laravel Pint for consistent formatting
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Features Implemented
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   **Thread Management**: Create, edit, and organize discussion threads
+-   **Reply System**: Nested replies with rich text support
+-   **User Profiles**: Customizable user profiles with activity tracking
+-   **Authentication**: Secure user registration and login
+-   **Responsive Design**: Mobile-first approach with Tailwind CSS
+-   **Real-time Updates**: Live notifications and updates (planned)
+-   **Thread Subscriptions**: Follow interesting discussions (planned)
+-   **Advanced Filtering**: Search and filter threads by various criteria (planned)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Quick Start
 
-## Laravel Sponsors
+### Prerequisites
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+-   PHP 8.2 or higher
+-   Composer
+-   Node.js & npm
+-   SQLite (default) or MySQL/PostgreSQL
 
-### Premium Partners
+### Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+1. **Clone the repository**
 
-## Contributing
+    ```bash
+    git clone <repository-url>
+    cd forum
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. **Install PHP dependencies**
 
-## Code of Conduct
+    ```bash
+    composer install
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. **Install JavaScript dependencies**
 
-## Security Vulnerabilities
+    ```bash
+    npm install
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. **Environment setup**
 
-## License
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. **Database setup**
+
+    ```bash
+    touch database/database.sqlite
+    php artisan migrate --seed
+    ```
+
+6. **Start development servers**
+
+    ```bash
+    # Terminal 1: Laravel backend
+    php artisan serve
+
+    # Terminal 2: Vite frontend
+    npm run dev
+    ```
+
+7. **Visit the application**
+   Open [http://localhost:8000](http://localhost:8000) in your browser
+
+## Development Commands
+
+-   `php artisan serve` - Start Laravel development server
+-   `npm run dev` - Start Vite development server with hot reload
+-   `npm run build` - Build assets for production
+-   `php artisan test` - Run PHP tests using Pest
+-   `./vendor/bin/pint` - Format PHP code with Laravel Pint
+
+## Project Structure
+
+```
+├── app/                    # Laravel application logic
+│   ├── Http/Controllers/   # Request handlers
+│   ├── Models/            # Eloquent models
+│   └── Policies/          # Authorization policies
+├── database/              # Migrations, seeders, factories
+├── resources/
+│   ├── js/               # Vue.js components and frontend logic
+│   └── views/            # Blade templates
+├── routes/               # Route definitions
+└── tests/               # Test files
+```
+
+## Why This Project?
+
+Forums represent a perfect balance of complexity and familiarity. While the concept is simple, the implementation reveals numerous challenges:
+
+-   **Data Relationships**: Users, threads, replies, and their interconnections
+-   **Real-time Features**: Live updates and notifications
+-   **User Experience**: Intuitive navigation and interaction patterns
+-   **Performance**: Efficient querying and caching strategies
+-   **Security**: Protecting against common web vulnerabilities
